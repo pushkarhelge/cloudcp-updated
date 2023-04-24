@@ -1,0 +1,31 @@
+EmployeeData:
+EmpID
+EmpFname
+EmpLname
+Department
+Project
+Address
+DOB
+Gender
+EmployeeExtension:
+EmpID
+EmpPosition
+DateOfJoining
+Salary
+
+Select * from EmployeeData as ed join EmployeeeExtension  as ee on ed.EmpId == ee.EmpId where ee.Empposition = 'Manager'
+
+
+char firNonReptitngChar(String s){
+	
+	unorder_map<char,int. charCounts;
+	for(char c: s){
+if(charCount[c]==1){
+return c;
+}
+
+ip = "127.0.0.1"
+
+[[${ip[0] - le 255 && ${ip[1]} - le 255 \ && $ {ip[2] -le 255} &&  ip} 
+
+}

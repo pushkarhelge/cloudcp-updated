@@ -1,0 +1,39 @@
+<%- include ("includes/header") %>
+
+<div id="homeApp" style="margin-bottom: 80px;">
+    <div class="container" id="features">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>File Transfer Web App</h1>
+                <h4>Cloud Computing Course Project</h4>
+
+                <p>Group Members: </p>
+                <ul style="list-style: none;">
+                    <li>Chetanya Rathi</li>
+                    <li>Harsh Dhabekar</li>
+                    <li>Harshit Mundhra</li>
+                    <li>Pushkar Helge</li>
+                    <li>Kartik Rajput</li>
+                </ul>
+
+                <a v-bind:href="mainURL + '/MyUploads'">Get Started</a>
+            </div>
+        </div>
+
+        
+
+    
+</div>
+
+<script>
+    const homeApp = Vue.createApp({
+        data() {
+            return {
+                mainURL: baseUrl,
+            }
+        }
+    });
+    homeApp.mount("#homeApp");
+</script>
+
+<%- include ("includes/footer") %>

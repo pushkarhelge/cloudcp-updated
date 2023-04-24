@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/a2cb0698-ba43-4f75-85a4-b36c088343c1/resourceGroups/filesharecp_group/providers/Microsoft.Web/sites/filesharecp",
+    "appService.deploySubpath": "."
+}
