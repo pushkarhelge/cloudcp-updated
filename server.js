@@ -834,18 +834,28 @@ http.listen(port, function () {
             const _id = request.fields._id;
 
             if (request.session.user) {
+
                 var user = await database.collection("users").findOne({
                     "_id": ObjectId(request.session.user._id)
                 });
+                console.log(_id);
                 var file = await recursiveGetFile(user.uploaded, _id);
+                var folder = await recursiveGetFolder(user.uploaded, _id);
 
-                if (file == null) {
+                if (file == null && folder == null) {
                     request.session.status = "error";
                     request.session.message = "File does not exists";
 
                     const backURL = request.header("Referer") || "/";
                     result.redirect(backURL);
                     return false;
+                }
+
+                if(folder!=null){
+                    folder.name = folder.folderName;
+                    folder.filePath = folder.folderPath;
+                    delete folder.files;
+                    file = folder;
                 }
 
                 bcrypt.hash(file.name, 10, async function (error, hash) {
@@ -1078,7 +1088,7 @@ http.listen(port, function () {
                     uploadedObj.folderPath = folderObj.folderPath + "/"
                     name;
                     updatedArray = await getUpdatedArray(user.uploaded,
-                        _id, uploaded0bj);
+                        _id, uploadedObj);
                 }
 
                 if (uploadedObj.folderPath == "") {

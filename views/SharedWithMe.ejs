@@ -11,7 +11,7 @@
                     </h1>
                 </div>
                 <div class="col-md-4">
-                    <!-- More buttons go here -->
+                   
                     <% if (_id !=null){ %>}
                         <div class="dropdown" style="display: initial;">
                             <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -36,7 +36,8 @@
             </div>
 
             <div class="row">
-                <% files.forEach(function (file) { var singleFile=typeof file.file==="undefined" ? file : file.file; var
+                <% files.forEach(function (file) {
+                     var singleFile=typeof file.file==="undefined" ? file : file.file; var
                     fileSize=0; %>
                     <div class="col-md-4" style="margin-top: 30px;">
                         <div class="card">

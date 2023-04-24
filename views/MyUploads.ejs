@@ -195,9 +195,10 @@
                 </div>
                 <div class="modal-body">
                     <form method="POST" action="<%= request.mainURL %>/Share
-                    " id="form-share-modal">
+                    "id="form-share-modal">
                         <input type="hidden" name="_id" required />
                         <input type="hidden" name="type" required />
+                        
                         <div class="form-group">
                             <label>Enter email</label>
                             <input type="email" name="email" class="form-control" required />
@@ -379,6 +380,8 @@
 
             document.getElementById("button-share-file").setAttribute("data-id", _id);
             document.getElementById("button-share-file").setAttribute("data-type", type);
+
+            document.getElementById("form-share-via-link")._id.value = _id;
 
 
 
